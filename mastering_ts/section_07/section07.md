@@ -37,3 +37,13 @@ price.replace("$", "");
 `const stuff: (number | string)[]`와 `const stuff: number[] | string[]` 역시 다릅니다. 후자는 `[2, "hello"]` 같은 값을 받을 수 없습니다. 숫자의 배열이거나(e.g `[1,2,3]`) 문자열의 배열인 값이라는 뜻이기 때문입니다.
 
 ## Literal Types
+
+literal type은 단순한 타입이 아니라 그 자체로 값도 가지고 있습니다. literal 타입만으로는 그다지 유용하지 않지만, 유니온 타입이나 튜플 타입과 결합하면 강력한 도구가 됩니다.
+
+```md
+const giveAnswer = (answer: "yes" | "no" | "maybe") => {
+return `The answer is ${answer}`;
+};
+```
+
+위의 예시에서는 유니온 타입과 결합했고, giveAnswer라는 함수는 yes, no, maybe 이 세 가지를 제외한 다른 파라미터를 받을 수 없게 제한해주었습니다.

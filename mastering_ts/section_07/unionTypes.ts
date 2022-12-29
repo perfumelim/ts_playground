@@ -28,3 +28,24 @@ function calculateTax(price: number | string, tax: number) {
 }
 
 const stuff: (number | string)[] = [1];
+
+const coord: (Poi | Loc)[] = [];
+coord.push({ lat: 32.1, long: 23.3 });
+
+const giveAnswer = (answer: "yes" | "no" | "maybe") => {
+  return `The answer is ${answer}`;
+};
+
+let mood: "Happy" | "Sad" = "Happy";
+mood = "Sad";
+
+type DayOfWeek =
+  | "Monday"
+  | "Tuesday"
+  | "Wednesday"
+  | "Thursday"
+  | "Friday"
+  | "Saturday"
+  | "Sunday";
+
+let today: DayOfWeek = "Friday";
