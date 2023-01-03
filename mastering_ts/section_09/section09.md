@@ -35,3 +35,45 @@ number
 }
 }
 ```
+
+## Types vs. Interfaces
+
+```md
+type Person = {
+name: string;
+};
+
+type Person = {
+age: number;
+};
+```
+
+라는 코드를 쓰면 어떻게 될까요? 에러가 납니다.
+
+```md
+const person: Person = {
+name: "Jerry",
+age: 42,
+};
+```
+
+위 코드 역시 Person 타입이 age를 갖고 있지 않다고 에러를 뱉어냅니다. 하지만 Interface로 선언할 땐 다른 결과가 나타납니다.
+
+```md
+interface Person {
+name: string;
+}
+
+interface Person {
+age: number;
+}
+```
+
+위 코드는 아무런 에러 없이 작동합니다. 뿐만 아니라 Person이란 타입이 name과 age를 모두 갖게 됩니다. 그래서 아래 코드 역시 아무런 에러가 일어나지 않습니다.
+
+```md
+const person: Person = {
+name: "Jerry",
+age: 42,
+};
+```
