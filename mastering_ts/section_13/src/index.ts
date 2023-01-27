@@ -1,4 +1,4 @@
-class Player {
+class Players{
 
 
   constructor(public first: string, public last: string, protected _score: number) {
@@ -21,7 +21,7 @@ get fullName() : string {
   }
 }
 
-class SuperPlayer extends Player {
+class SuperPlayer extends Players {
   public isAdmin: boolean = true;
   maxScore() {
     this._score = 999;
